@@ -25,23 +25,16 @@ final class Singleton
     }
 
     // защита от создания через конструктор
-    private function __constructor()
-    {
-        // echo "Привет из конструктора !!! Инстанцироваться не получится ... ";
-        // return self::$instance;
-    }
+    final private function __construct() { }
 
     // защита от клонирования
-    private function __clone()
-    {
+    final private function __clone() { }
 
-    }
+    // защита от десериализации
+    final private function __wakeup() { }
 
     // защита от сериализации
-    private function __wakeup()
-    {
-
-    }
+    final private function __sleep() { }
 }
 
 $inst = Singleton::getInstance();
@@ -54,7 +47,16 @@ var_dump($inst1);
 $inst1->incBar();
 var_dump($inst1->getBar());
 
+// защита от создания
 $inst_construct = new Singleton();
 var_dump($inst_construct);
 
+// защита от клонирования
+$inst_clone = clone $inst;
+var_dump($inst_construct);
 
+$str = serialize($inst);
+var_dump($str);
+
+$inst_unserialize = unserialize($str);
+var_dump($inst_unserialize);
