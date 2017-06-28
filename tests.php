@@ -128,6 +128,42 @@ function boo($num)
 }
 boo(5);
 
+$arr = array(3,8,15,25,16,11,10,5,7,30);
+echo "<br />" . count($arr) . "</br>";
 
+for($i=0; $i<count($arr); $i++) {
+    if ($arr[$i] % 5 == 0) {
+        echo $i . "</br>";
+    }
+}
+
+echo "</br></br>";
+$lst = array();
+$k = "prostoe";
+
+for($i=2; $i<100; $i++) {
+    for ($j = 2; $j < $i; $j++) {
+        if ($i % $j == 0)
+            $k = "не простое";
+    }
+
+    if ($k == "простое")
+        $lst[] = $i;
+    else
+        $k = "простое";
+}
+
+foreach ($lst as $list)
+    echo $list . "</br>";
+
+echo "</br></br>";
+do {
+    $a = rand(0, 10);
+    $b = rand(0, 10);
+    $c = rand(0, 10);
+
+    $result = $a + $b + $c;
+    echo $result . "</br>";
+} while ($result < 14);
 
 

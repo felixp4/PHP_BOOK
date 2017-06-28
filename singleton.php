@@ -48,12 +48,12 @@ $inst1->incBar();
 var_dump($inst1->getBar());
 
 // защита от создания
-$inst_construct = new Singleton();
-var_dump($inst_construct);
+// $inst_construct = new Singleton();
+// var_dump($inst_construct);
 
 // защита от клонирования
-$inst_clone = clone $inst;
-var_dump($inst_construct);
+// $inst_clone = clone $inst;
+// var_dump($inst_construct);
 
 $str = serialize($inst);
 var_dump($str);
