@@ -6,11 +6,7 @@ $capitals = array("US"=>"Washington", "UK"=>"London", "Austria"=>"Vienna");
 var_dump($capitals);
 
 // sort($capitals);
-// var_dump($capitals);
-
 // asort($capitals);
-// var_dump($capitals);
-
 ksort($capitals);
 var_dump($capitals);
 
@@ -62,6 +58,20 @@ for($i = strlen($a)-1; $i>=0; $i--) $b.=$a[$i];
 $a = $b;
 echo "<br><br>".$a;
 
+$str = "Turn me baby";
+function myrev($src)
+{
+    $length = strlen($src);
+    for($i = 0; $i < $length/2; $i++)
+    {
+        $a = $src[$i];
+        $src[$i] = $src[$length - $i - 1];
+        $src[$length - $i - 1] = $a;
+    }
+    return $src;
+}
+echo "</br></br>" . myrev($str);
+
 function fac($x)
 {
     if($x===0)
@@ -104,6 +114,9 @@ foreach($cars as $car)
 {
     echo $car . "<br />";
 }
+
+echo "<br />". count($cars) . ", " . count($sum) . ", " . count($temp);
+echo "<br />". sizeof($cars) . ", " . sizeof($sum) . ", " . sizeof($temp);
 
 $people = array("Иванов" => "Иван", "Сидоров" => "Николай", "Петров" => "Петр");
 echo "<br /><br />";
