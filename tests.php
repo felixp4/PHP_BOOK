@@ -179,4 +179,43 @@ do {
     echo $result . "</br>";
 } while ($result < 14);
 
+$a = "1";
+$a[$a] = "2";
+echo "<br />$a";
+
+$arr = range(0, 999999);
+$start_time = microtime(true);
+for($i=0; $i < count($arr); $i++) {}
+echo "<br /><br />";
+echo microtime(true) - $start_time;
+
+$start_time = microtime(true);
+$length = count($arr);
+for($i=0; $i < $length; $i++) {}
+echo "<br />";
+echo microtime(true) - $start_time;
+
+$start_time = microtime(true);
+$length = count($arr);
+for($i=$length; $i >= 0; $i--) {}
+echo "<br />";
+echo microtime(true) - $start_time;
+
+$start_time = microtime(true);
+$length = count($arr);
+foreach($arr as $val) {}
+echo "<br />";
+echo microtime(true) - $start_time;
+
+$arr = array(1, 2, 3, 4, 10, 100, 3, 4987, 6, 7, 8, 9);
+echo "<br />";
+print_r($arr);
+echo "<br />".max($arr);
+
+$max = $arr[0];
+foreach($arr as $val) {
+    if ($max < $val)
+        $max = $val;
+}
+echo "<br />" . $max;
 
